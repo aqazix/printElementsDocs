@@ -1,0 +1,116 @@
+doctype
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title PrintElements
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@latest/dist/compressed/luxa.css")
+        link(rel="stylesheet", href="main.css")
+    body
+    header
+        .lx-container-70
+            nav.lx-row
+                a.lx-btn(href="#howtouse") How to Use
+                a.lx-btn(
+                    href="https://github.com/aqazix/printElements/blob/master/LICENSE",
+                    target="_blank",
+                    rel="noopener noreferrer"
+                ) License
+                a.lx-btn(
+                    href="https://github.com/aqazix/printElements/",
+                    target="_blank",
+                    rel="noopener noreferrer"
+                ) GitHub
+
+    main
+        section.has-dflex-center.hero
+            .lx-container-70
+                .lx-row
+                    h1 printElements
+                    h2 A JavaScript library to print content from HTML pages as a document.
+        section.has-dflex-center
+            .lx-container-70
+                .lx-row
+                    h3 What does it do?
+                    p With this JS library, you can select the tags of your HTML files that you want the PDF or Print to be generated.
+                    p In addition to the tags that will not be printed according to a specific class.
+        section.has-dflex-center
+            .lx-container-70
+                .lx-row.align-stretch
+                    .lx-column.is-3
+                        h3 Quick Start
+                    .lx-column
+                        .lx-row
+                            h4 CDN
+                            p You can use printElements by CDN, provided by the jsDeliver service, below:
+                            .lx-card
+                                .code-wrap
+                                    .code.html
+                                        | &lt;!-- CSS --&gt;
+                                        | &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.css&quot;&gt;
+                                        | &lt;!-- JS --&gt;
+                                        | &lt;script src=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+                            br
+                            h4 By Download
+                            p You can also download minified files from the&nbsp;
+                                a(
+                                    href="https://github.com/aqazix/printElements/tree/master/dist",
+                                    target="_blank",
+                                    rel="noopener noreferrer"
+                                ) dist/ folder in GitHub
+                                | &nbsp;and include them in your HTML with a link and script.
+                            br
+                            h4#howtouse How to setup and use
+                            p To use it, the content to be printed needs to be encapsulated in the first &lt;main&gt; tag.
+                            p Then, in your script, you should call the function printElements(options) and pass an object as a parameter, with the options that suit your project.
+                            .lx-card
+                                .code-wrap
+                                    .code.html
+                                        | &lt;head&gt;
+                                        | &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.css&quot;&gt;
+                                        | &lt;/head&gt;
+                                        | &lt;body&gt;
+                                        | &lt;main&gt;
+                                        | &lt;h1&gt;Your Content!&lt;/h1&gt;
+                                        | &lt;/main&gt;
+                                        | &lt;script src=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+                                    .code.js
+                                        | &lt;script&gt;
+                                        | const options = {
+                                        | "targets": [
+                                        | "index.html",
+                                        | "pages/page2.html",
+                                        | "../page3.html"
+                                        | ],
+                                        | "tags": [
+                                        | "h1",
+                                        | "h2",
+                                        | "h3",
+                                        | "p",
+                                        | "li",
+                                        | "span"
+                                        | ],
+                                        | "willNotPrint": "not-print"
+                                        | };
+                                        | document.querySelector(&quot;#myBtn&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+                                        | printElements(options);
+                                        | });
+                                        | &lt;/script&gt;
+                                    .code.html
+                                        | &lt;/body&gt;
+                            br
+                            p
+                                b In this object you should declare a few things:
+                            ol
+                                li
+                                    span Targets
+                                    | &nbsp;- The relative paths to the pages to be included in the print function.
+                                li
+                                    span Tags
+                                    | &nbsp;- An array of the tags to be printed (Ex: h1, h2, h3, p, li, etc.).
+                                li
+                                    span willNotPrint
+                                    | &nbsp;- A class selector that will exclude elements in the function (Ex: .not-print).
+
+    script(crossorigin="anonymous", src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js")
+    script(src="main.js")

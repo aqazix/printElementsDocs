@@ -1,0 +1,150 @@
+$c1: #22212c
+$c2: #2a2c37
+$c3: #9580ff
+$c4: #8aff80
+$c5: #ffb86c
+$c6: #ff5555
+$c7: #ff79c6
+
+$w: #f8f8f2
+
+html,body
+    font-family: "Roboto", sans-serif
+    color: $w
+
+body
+    background-color: $c1
+    background-image: radial-gradient(circle, $c2 0%, $c1 100%)
+
+header
+    width: 100%
+    padding: 2rem 0
+    background-color: $c1
+
+    nav
+        gap: 1rem
+
+    .lx-btn
+        display: block
+        text-transform: none
+        font-weight: 500
+        box-shadow: none
+
+        &:focus,
+        &:hover
+            color: $c1
+            background-color: $c3
+
+main
+    section
+        width: 100%
+        padding: 2rem 0
+
+        @for $i from 0 through 6
+            h#{$i}
+                width: 100%
+                margin: 0
+                text-align: left
+                color: $c3
+
+        p
+            width: 100%
+            margin: 0
+            text-align: left
+
+        a
+            text-decoration: underline
+            color: $c6
+
+        ol
+            width: 100%
+
+            li
+                span
+                    color: $c5
+
+        &.hero
+            min-height: 60vh
+
+            h1,
+            h2
+                margin: 0
+                text-align: center
+
+            h1
+                font-size: 4rem
+                color: $c4
+                text-shadow: 0.125rem 0.125rem rgba(black, 0.4)
+
+            h2
+                text-transform: lowercase
+                font-size: 1.5rem
+                color: $w
+
+        .lx-card
+            width: 100%
+            box-shadow: none
+            background-color: $c1
+
+        .code-wrap
+            width: 100%
+            border-radius: 0.328rem
+            overflow: auto
+
+            .code
+                padding: 1rem
+                display: grid
+                grid-auto-flow: row
+                gap: 0.5rem
+                font-family: "Source Code Pro", monospace
+                font-size: 10.5pt
+                color: $c3
+                background-color: $c2
+
+        .hljs
+            &-emphasis
+                font-style: italic
+
+            &-doctag,
+            &-keyword,
+            &-literal,
+            &-name,
+            &-section,
+            &-selector-tag,
+            &-strong,
+            &-title,
+            &-type
+                font-weight: 700
+
+            &-keyword,
+            &-link,
+            &-literal,
+            &-section,
+            &-selector-tag
+                color: $c6
+
+            &-function
+                .hljs-keyword
+                    color: $c4
+
+            &-subst
+                color: $c3
+
+            &-addition,
+            &-attribute,
+            &-bullet,
+            &-name,
+            &-string,
+            &-symbol,
+            &-template-tag,
+            &-template-variable,
+            &-title,
+            &-type,
+            &-variable
+                color: $c4
+
+            &-comment,
+            &-deletion,
+            &-meta,
+            &-quote
+                color: $c7

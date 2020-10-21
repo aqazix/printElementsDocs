@@ -1,0 +1,35 @@
+{
+  "name": "printelementsdocs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./docs/index.html",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "keywords": [
+    "js",
+    "print",
+    "PDF",
+    "print to PDF"
+  ],
+  "homepage": "https://github.com/aqazix/printElements.git",
+  "author": {
+    "name": "Lucas de França",
+    "email": "luxonauta@gmail.com"
+  },
+  "co-author": {
+    "name": "Pedro Renato Rodrigues de Sousa",
+    "email": "pedrorrdesousa97@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.14.1"
+  }
+}

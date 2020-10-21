@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>PrintElements</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@latest/dist/compressed/luxa.css"><link rel="stylesheet" href="main.css"></head><body></body><header><div class="lx-container-70"><nav class="lx-row"><a class="lx-btn" href="#howtouse">How to Use</a><a class="lx-btn" href="https://github.com/aqazix/printElements/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">License</a><a class="lx-btn" href="https://github.com/aqazix/printElements/" target="_blank" rel="noopener noreferrer">GitHub</a></nav></div></header><main><section class="has-dflex-center hero"><div class="lx-container-70"><div class="lx-row"><h1>printElements</h1><h2>A JavaScript library to print content from HTML pages as a document.</h2></div></div></section><section class="has-dflex-center"><div class="lx-container-70"><div class="lx-row"><h3>What does it do?</h3><p>With this JS library, you can select the tags of your HTML files that you want the PDF or Print to be generated.</p><p>In addition to the tags that will not be printed according to a specific class.</p></div></div></section><section class="has-dflex-center"><div class="lx-container-70"><div class="lx-row align-stretch"><div class="lx-column is-3"><h3>Quick Start</h3></div><div class="lx-column"><div class="lx-row"><h4>CDN</h4><p>You can use printElements by CDN, provided by the jsDeliver service, below:</p><div class="lx-card"><div class="code-wrap"><div class="code html">&lt;!-- CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.css&quot;&gt;
+&lt;!-- JS --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</div></div></div><br><h4>By Download</h4><p>You can also download minified files from the&nbsp;<a href="https://github.com/aqazix/printElements/tree/master/dist" target="_blank" rel="noopener noreferrer">dist/ folder in GitHub</a>&nbsp;and include them in your HTML with a link and script.</p><br><h4 id="howtouse">How to setup and use</h4><p>To use it, the content to be printed needs to be encapsulated in the first &lt;main&gt; tag.</p><p>Then, in your script, you should call the function printElements(options) and pass an object as a parameter, with the options that suit your project.</p><div class="lx-card"><div class="code-wrap"><div class="code html">&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main&gt;
+&lt;h1&gt;Your Content!&lt;/h1&gt;
+&lt;/main&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/aqazix/printElements@latest/dist/printElements.min.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</div><div class="code js">&lt;script&gt;
+const options = {
+"targets": [
+"index.html",
+"pages/page2.html",
+"../page3.html"
+],
+"tags": [
+"h1",
+"h2",
+"h3",
+"p",
+"li",
+"span"
+],
+"willNotPrint": "not-print"
+};
+document.querySelector(&quot;#myBtn&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+printElements(options);
+});
+&lt;/script&gt;</div><div class="code html">&lt;/body&gt;</div></div></div><br><p><b>In this object you should declare a few things:</b></p><ol><li><span>Targets</span>&nbsp;- The relative paths to the pages to be included in the print function.</li><li><span>Tags</span>&nbsp;- An array of the tags to be printed (Ex: h1, h2, h3, p, li, etc.).</li><li><span>willNotPrint</span>&nbsp;- A class selector that will exclude elements in the function (Ex: .not-print).</li></ol></div></div></div></div></section></main><script crossorigin="anonymous" src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script><script src="main.js"></script></html>

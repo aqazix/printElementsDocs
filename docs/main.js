@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",(function(e){document.querySelectorAll(".code-wrap").forEach((function(e){hljs.highlightBlock(e)}))}));
